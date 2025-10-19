@@ -137,7 +137,10 @@ body {
     function playMusicSegment() {
       if (player && player.seekTo) {
         player.seekTo(20);
+        player.mute();
         player.playVideo();
+
+        setTimeout(() => player.unMute(), 500);
       } else {
         setTimeout(playMusicSegment, 500);
       }
@@ -156,3 +159,4 @@ body {
 </body>
 
 </html>
+
